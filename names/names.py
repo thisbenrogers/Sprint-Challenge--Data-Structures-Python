@@ -10,13 +10,38 @@ f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
-duplicates = []  # Return the list of duplicates in this data structure
+# *
+# * Start solutions
+# *
 
-# Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+# duplicates = []  # Return the list of duplicates in this data structure
+
+
+# Fastest solution: (STRETCH SOLUTION)
+duplicates = list(set(names_1).intersection(names_2))
+
+
+# Mid-level performance solution:
+# 
+# duplicates = [x for x in names_1 if x in names_2]
+
+
+# Original, not-performant iteration:
+# ?
+# ? What is the runtime complexity of the starter code below ?
+# ? 
+# ? This has a complexity of O(n²), or quadratic
+# ?
+# 
+# 
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
+
+# *
+# * End solutions
+# *
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
