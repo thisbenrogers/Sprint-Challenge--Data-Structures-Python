@@ -1,6 +1,6 @@
 class RingBuffer:
     def __init__(self, capacity):
-        self.cap = capacity
+        self.capacity = capacity
         self.data = []
 
     def __str__(self):
@@ -8,20 +8,20 @@ class RingBuffer:
 
     def __repr__(self):
         return (f"ListNode("
-                f"\n\capacity={self.cap}"
+                f"\n\capacity={self.capacity}"
                 f"\n\data={self.data}\n)")
 
     class __Full:
         def append(self, item):
             self.data[self.current] = item
-            self.current = (self.current + 1) % self.cap
+            self.current = (self.current + 1) % self.capacity
         
         def get(self):
             return self.data[self.current:] + self.data[:self.current]
 
     def append(self, item):
         self.data.append(item)
-        if len(self.data) == self.cap:
+        if len(self.data) == self.capacity:
             self.current = 0
             self.__class__ = self.__Full
 
