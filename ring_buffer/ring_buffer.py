@@ -11,6 +11,14 @@ class RingBuffer:
                 f"\n\capacity={self.cap}"
                 f"\n\data={self.data}\n)")
 
+    class __Full:
+        def append(self, item):
+            self.data[self.current] = item
+            self.current = (self.current + 1) % self.max
+        
+        def get(self):
+            return self.data[self.current:] + self.data[:self.current]
+
     def append(self, item):
         pass
 
