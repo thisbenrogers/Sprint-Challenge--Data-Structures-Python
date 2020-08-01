@@ -17,7 +17,7 @@ f.close()
 # duplicates = []  # Return the list of duplicates in this data structure
 
 
-# Fastest solution:
+# Fastest solution: (STRETCH SOLUTION)
 duplicates = list(set(names_1).intersection(names_2))
 
 
