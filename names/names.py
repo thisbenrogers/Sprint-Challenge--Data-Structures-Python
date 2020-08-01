@@ -27,6 +27,12 @@ duplicates = list(set(names_1).intersection(names_2))
 
 
 # Original, not-performant iteration:
+# ?
+# ? What is the runtime complexity of the starter code below ?
+# ? 
+# ? This has a complexity of O(n²), or quadratic
+# ?
+# 
 # 
 # for name_1 in names_1:
 #     for name_2 in names_2:
